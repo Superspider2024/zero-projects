@@ -3,11 +3,12 @@ const temp1=document.getElementById('temp1');
 const rain1=document.getElementById('rain1');
 const hum1 = document.getElementById('hum1');
 const image =document.getElementById('image');
+const place = document.getElementById('place');
 
 //getting the weather data using API stuff
 
 const apiKey='39878118c3bd5269e808d6ffd456a339' ;
-const city = 'Nairobi';
+const city = place.value;
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}`)
     .then(response=>{
         if(!response.ok){
@@ -76,5 +77,7 @@ const decImage=(data)=>{
     }
 
     }
+
+
 
 
