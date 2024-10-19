@@ -1,7 +1,8 @@
 //setting fundamental global variables for DOM
 const temp1=document.getElementById('temp1');
 const rain1=document.getElementById('rain1');
-const hum1 = document.getElementById('hum1')
+const hum1 = document.getElementById('hum1');
+const image =document.getElementById('image');
 
 //getting the weather data using API stuff
 
@@ -45,27 +46,33 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}
 const decImage=(data)=>{
     if(data.main.temp >=(26+273.15)){
         if((data.rain ? data.rain['1h'] || 0 : 0)>=8){
-            //image with big rain
+            image.src='images\cloud.png'
         }else{
-            //image with no rain
+            image.src='images\hot-temperature.png'
         }
-        //hot sun
+
     
     }else if(data.main.temp>=(20+273.15)){
         if((data.rain ? data.rain['1h'] || 0 : 0)>=8){
-            //image with big rain
+            image.src='images\cloud.png'
         }else{
-            //image with no rain
+            image.src='images\medium.png'
         }
-        //medium sun
+        
 
+    }else if(data.main.temp>=(18+273.15)){
+        if((data.rain ? data.rain['1h'] || 0 : 0)>=8){
+            image.src='images\cloud.png'
+        }else{
+            image.src='images\low.png'
+        }
+        
     }else{
         if((data.rain ? data.rain['1h'] || 0 : 0)>=8){
-            //image with big rain
+            image.src='images\water-cooler.png'
         }else{
-            //image with no rain
+            image.src='images\temperature.png'
         }
-        //cold
     }
 
     }
