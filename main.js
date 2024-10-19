@@ -21,7 +21,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}
         //parsing and receiving the data
 
         const temperatureKelvin = data.main.temp;
-        const temperatureCelsius = temperatureKelvin - 273.15; 
+        const temperatureCelsius = (temperatureKelvin - 273.15).toFixed(0); 
         const description = data.weather[0].description;
         const rain = data.rain ? data.rain['1h'] || 0 : 0; 
         const humidity = data.main.humidity; 
