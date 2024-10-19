@@ -46,32 +46,32 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}
 const decImage=(data)=>{
     if(data.main.temp >=(26+273.15)){
         if((data.rain ? data.rain['1h'] || 0 : 0)>=8){
-            image.src='images\cloud.png'
+            image.src='images/cloud.png'
         }else{
-            image.src='images\hot-temperature.png'
+            image.src='images/hot-temperature.png'
         }
 
     
     }else if(data.main.temp>=(20+273.15)){
         if((data.rain ? data.rain['1h'] || 0 : 0)>=8){
-            image.src='images\cloud.png'
+            image.src='images/cloud.png'
         }else{
-            image.src='images\medium.png'
+            image.src='images/medium.png'
         }
         
 
     }else if(data.main.temp>=(18+273.15)){
         if((data.rain ? data.rain['1h'] || 0 : 0)>=8){
-            image.src='images\cloud.png'
+            image.src='images/cloud.png'
         }else{
-            image.src='images\low.png'
+            image.src='images/low.png'
         }
         
     }else{
         if((data.rain ? data.rain['1h'] || 0 : 0)>=8){
-            image.src='images\water-cooler.png'
+            image.src='images/water-cooler.png'
         }else{
-            image.src='images\temperature.png'
+            image.src='images/temperature.png'
         }
     }
 
