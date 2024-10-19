@@ -34,26 +34,24 @@
     background:orange;
 }
 .temp{
-    background:rgb(96,96,96);
     display:flex;
+    flex-direction: column;
+    background:#606060;
     flex-direction:row;
-    gap:200px;
+    gap:250px;
 
 
 
 }
 .tempimg{
-    flex:3;
     display:inline;
-    height:70px;
+    height:50px;
     margin:5px;
-    width:70px;
+    margin-left:50px;
+    width:80px;
 
 }
 .temppa{
-    flex:4;
-    height:auto;
-    width:auto;
-    max-width:50px;
-    max-height:50px;
+    max-width:100px;
+    max-height:70px;
 }
