@@ -28,10 +28,18 @@
     grid-template-columns:auto;
 }
 .rain{
-    background:green;
+    display:flex;
+    flex-direction: column;
+    background:#606060;
+    flex-direction:row;
+    gap:250px;
 }
 .hum{
-    background:orange;
+    display:flex;
+    flex-direction: column;
+    background:#606060;
+    flex-direction:row;
+    gap:250px;
 }
 .temp{
     display:flex;
@@ -52,6 +60,30 @@
 
 }
 .temppa{
+    max-width:100px;
+    max-height:70px;
+}
+.rainimg{
+    display:inline;
+    height:50px;
+    margin:5px;
+    margin-left:50px;
+    width:80px;
+
+}
+.rainpa{
+    max-width:100px;
+    max-height:70px;
+}
+.humimg{
+    display:inline;
+    height:50px;
+    margin:5px;
+    margin-left:50px;
+    width:80px;
+
+}
+.humpa{
     max-width:100px;
     max-height:70px;
 }
