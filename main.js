@@ -34,6 +34,9 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}
         temp1.textContent = `${temperatureCelsius}°C`
         rain1.textContent = `${rain}ml`
         hum1.textContent=`${humidity}RH`
+
+        //image selector
+        decImage(data);
     })
     .catch(error=>{
         console.error(`to the funny error: ${error.message}`)
@@ -43,26 +46,22 @@ const decImage=(data)=>{
     if(data.main.temp >=(26+273.15)){
         if((data.rain ? data.rain['1h'] || 0 : 0)>=8){
             //image with big rain
-        }else if((data.rain ? data.rain['1h'] || 0 : 0)>=2){
-            //image with medium rain
         }else{
             //image with no rain
         }
+        //hot sun
     
     }else if(data.main.temp>=(20+273.15)){
         if((data.rain ? data.rain['1h'] || 0 : 0)>=8){
             //image with big rain
-        }else if((data.rain ? data.rain['1h'] || 0 : 0)>=2){
-            //image with medium rain
         }else{
             //image with no rain
         }
+        //medium sun
 
     }else{
         if((data.rain ? data.rain['1h'] || 0 : 0)>=8){
             //image with big rain
-        }else if((data.rain ? data.rain['1h'] || 0 : 0)>=2){
-            //image with medium rain
         }else{
             //image with no rain
         }
